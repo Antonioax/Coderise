@@ -9,7 +9,7 @@
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  color: #9495b8;
+  color: #ffffff;
 }
 
 html,
@@ -23,4 +23,10 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Nunito", sans-serif;
+}
+
+// Router link
+
+.active-link{
+  color: white;
 }

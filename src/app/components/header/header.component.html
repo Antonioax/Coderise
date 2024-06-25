@@ -1,14 +1,9 @@
 <div
-  class="max-sm:hidden h-12 bg-main bg-opacity-50 shadow-lg flex items-center justify-between px-3 text-ambient fixed w-full"
+  class="max-sm:hidden h-12 bg-main bg-opacity-50 shadow-lg flex items-center justify-start gap-3 px-3 text-ambient fixed w-full"
 >
-  <div class="flex gap-3">
-    <a routerLink="/posts" routerLinkActive="active-link">Home</a>
-    <a routerLink="/posts" routerLinkActive="active-link">About</a>
-    <a routerLink="/posts" routerLinkActive="active-link">Contacts</a>
-  </div>
-  <div class="flex gap-3">
-    <a routerLink="/" class="font-extralight">Coderise</a>
-  </div>
+    <a routerLink="/home" routerLinkActive="active-link">Home</a>
+    <a routerLink="/about" routerLinkActive="active-link">About</a>
+    <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
 </div>
 
 @if(isMenu) {
@@ -20,12 +15,12 @@
     <div
       class="flex flex-col gap-3 items-center py-6 border-b border-white w-[80%]"
     >
-      <a routerLink="/posts" routerLinkActive="active-link">Home</a>
-      <a routerLink="/posts" routerLinkActive="active-link">About</a>
-      <a routerLink="/posts" routerLinkActive="active-link">Contacts</a>
+      <a routerLink="/home" routerLinkActive="active-link">Home</a>
+      <a routerLink="/about" routerLinkActive="active-link">About</a>
+      <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
     </div>
     <div class="flex flex-col gap-3 items-center py-6">
-      <a routerLink="/" class="font-semibold">Coderise</a>
+      <a routerLink="/" class="font-semibold">coderise</a>
     </div>
   </div>
 </div>
