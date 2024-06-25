@@ -15,4 +15,12 @@
       to achieve your digital goals.
     </div>
   </div>
+
+  <form (ngSubmit)="onSend()" [formGroup]="form">
+    <div class="flex flex-col items-center gap-3 mt-10 mb-10 text-black">
+      <input type="email" placeholder="yourEmail@email.com" class="rounded-lg p-2 text-center w-[300px]" required>
+      <textarea placeholder="How can we help you :)" class="rounded-lg p-4 min-w-[500px] min-h-[200px]"></textarea>
+      <button type="submit" class="bg-main px-6 py-2 rounded-lg text-white">Send</button>
+    </div>
+  </form>
 </div>
