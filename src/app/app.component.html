@@ -1,3 +1,22 @@
-<app-header/>
-<router-outlet></router-outlet>
-<app-footer/>
+<div
+  class="min-h-screen w-full flex flex-col justify-between"
+  style="
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(18, 179, 203, 1) 0%,
+      rgba(15, 23, 42, 1) 0%,
+      rgba(10, 63, 103, 1) 0%,
+      rgba(0, 212, 255, 1) 100%,
+      rgba(10, 97, 126, 1) 100%,
+      rgba(12, 69, 94, 1) 100%
+    );
+  "
+>
+  <div>
+    <app-header />
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer />
+</div>
