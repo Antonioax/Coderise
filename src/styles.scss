@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+// Font
+
+* {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  color: #9495b8;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: none;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Nunito", sans-serif;
+}
