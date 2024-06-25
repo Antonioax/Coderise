@@ -1,1 +1,33 @@
-<p>header works!</p>
+<div
+  class="max-sm:hidden h-12 bg-main bg-opacity-50 shadow-lg flex items-center justify-between px-3 text-ambient fixed w-full"
+>
+  <div class="flex gap-3">
+    <a routerLink="/posts" routerLinkActive="active-link">Home</a>
+    <a routerLink="/posts" routerLinkActive="active-link">About</a>
+    <a routerLink="/posts" routerLinkActive="active-link">Contacts</a>
+  </div>
+  <div class="flex gap-3">
+    <a routerLink="/" class="font-semibold">Coderise</a>
+  </div>
+</div>
+
+@if(isMenu) {
+<div class="sm:hidden h-screen w-screen fixed z-10" (click)="isMenu = false">
+  <div
+    class="sm:hidden h-screen min-w-[50vw] bg-main bg-opacity-80 shadow-lg flex flex-col items-center py-3 text-ambient fixed"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="flex flex-col gap-3 items-center py-6 border-b border-white w-[80%]">
+      <a routerLink="/posts" routerLinkActive="active-link" >Posts</a>
+    </div>
+    <div class="flex flex-col gap-3 items-center py-6">
+      <a routerLink="/" class="font-semibold">BoredBook</a>
+    </div>
+  </div>
+</div>
+} @else {
+<div class="sm:hidden fixed top-4 left-4" (click)="isMenu = !isMenu">
+  <img src="assets/images/menu.svg" alt="Menu icon" />
+</div>
+}
+
