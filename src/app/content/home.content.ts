@@ -1,4 +1,10 @@
-export const HomeContent = [
+export interface Content {
+  title: string | null;
+  content: string | null;
+  image: string | null;
+}
+
+export const HomeContent: Content[] = [
   {
     title: 'Static Websites',
     content: `We specialize in crafting professional static websites tailored to elevate your business. Our solutions are designed to provide a seamless online presence, ensuring your brand stands out. Trust us to deliver high-quality, efficient websites that enhance your digital footprint.`,
