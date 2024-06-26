@@ -15,11 +15,23 @@ export const HomeContent: Content[] = [
   },
   {
     title: 'Dynamic Web Apps',
+    image: 'assets/images/dynamic.jpg',
+  },
+  {
+    title: 'Dynamic Web Apps',
     content: `We develop dynamic web applications that put you in complete control. Our cutting-edge solutions are designed to offer flexibility and functionality, empowering your business to thrive online. Experience seamless, user-friendly applications tailored to your specific needs.`,
   },
   {
     title: 'Mobile Apps',
     content: `We create innovative mobile apps that enhance your business’s reach and engagement. Our mobile solutions are tailored to deliver a seamless user experience, ensuring your brand stays connected with customers on the go. Trust us to develop high-quality, intuitive apps that drive your business forward.`,
+  },
+  {
+    title: 'Mobile Apps',
+    image: 'assets/images/mobile.jpg',
+  },
+  {
+    title: 'Digitalizing Businesses',
+    image: 'assets/images/digitalize.jpg',
   },
   {
     title: 'Digitalizing Businesses',
