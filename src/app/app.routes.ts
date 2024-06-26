@@ -20,4 +20,12 @@ export const routes: Routes = [
       ),
     title: 'Contact',
   },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./components/page-not-found/page-not-found.component').then(
+        (m) => m.PageNotFoundComponent
+      ),
+    title: '404',
+  },
 ];
