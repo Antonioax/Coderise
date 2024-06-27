@@ -18,6 +18,7 @@ export class FooterComponent implements OnInit {
     this.routerSub = this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((val: any) => {
+        console.log(val.url);
         this.currentPage = val.url;
       });
   }
