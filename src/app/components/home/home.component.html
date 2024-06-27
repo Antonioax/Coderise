@@ -22,7 +22,7 @@
     @for (item of content; track $index) { @if (item.image) {
     <div
       class="sm:m-10 bg-opacity-0 rounded-3xl max-w-[500px] shadow-2xl overflow-hidden self-center {{
-        $index % 2 == 0 ? 'place-self-end mr-12 mt-1 mb-6' : 'place-self-start ml-12 mt-2'
+        $index % 2 == 0 ? 'place-self-end mr-12 mt-4 mb-6' : 'place-self-start ml-12 mt-2'
       }}"
     >
       <img [src]="item.image" alt="item.title" class="bg-cover rounded-3xl" />
