@@ -30,3 +30,10 @@ body {
 .active-link{
   font-weight: 400;
 }
+
+// Hiding scrollbars
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
