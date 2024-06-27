@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   content!: Content[];
 
   ngOnInit() {
+    document.body.scrollTop = 0;
     this.content = HomeContent;
   }
 }

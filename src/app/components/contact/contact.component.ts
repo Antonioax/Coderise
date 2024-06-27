@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './contact.component.html',
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
+  ngOnInit(): void {
+    document.body.scrollTop = 0;
+  }
 }
