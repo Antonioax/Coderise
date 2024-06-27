@@ -11,11 +11,11 @@ export const HomeContent: Content[] = [
   },
   {
     title: 'Static websites',
-    image: 'assets/images/static.jpg',
+    image: 'static',
   },
   {
     title: 'Dynamic Web Apps',
-    image: 'assets/images/dynamic.jpg',
+    image: 'dynamic',
   },
   {
     title: 'Dynamic Web Apps',
@@ -27,11 +27,11 @@ export const HomeContent: Content[] = [
   },
   {
     title: 'Mobile Apps',
-    image: 'assets/images/mobile.jpg',
+    image: 'mobile',
   },
   {
     title: 'Digitalizing Businesses',
-    image: 'assets/images/digitalize.jpg',
+    image: 'digitalize',
   },
   {
     title: 'Digitalizing Businesses',

@@ -1,4 +1,6 @@
-<div class="flex justify-center items-center pt-44 flex-col" style="
+<div
+  class="flex justify-center items-center pt-44 flex-col"
+  style="
     background: rgb(2, 0, 36);
     background: linear-gradient(
       270deg,
@@ -10,22 +12,44 @@
       rgba(12, 69, 94, 1) 100%,
       rgba(0, 212, 255, 1) 100%
     );
-  ">
+  "
+>
   <div class="text-6xl sm:text-9xl font-thin">
     code<span class="font-light">rise</span>
   </div>
   <div class="mt-5 text-xs sm:text-base">
-    Rise with <span class="font-light">code</span>, Succeed with <span class="font-light">coderise</span>.
+    Rise with <span class="font-light">code</span>, Succeed with
+    <span class="font-light">coderise</span>.
   </div>
 
   <div class="grid xl:grid-cols-2 w-[90%] my-32 justify-center items-center">
     @for (item of content; track $index) { @if (item.image) {
     <div
       class="sm:m-10 bg-opacity-0 rounded-3xl max-w-[500px] shadow-2xl overflow-hidden self-center {{
-        $index % 2 == 0 ? 'place-self-end mr-12 mt-4 mb-6' : 'place-self-start ml-12 mt-2'
+        $index % 2 == 0
+          ? 'place-self-end mr-12 mt-4 mb-6'
+          : 'place-self-start ml-12 mt-2'
       }}"
     >
-      <img [src]="item.image" alt="item.title" class="bg-cover rounded-3xl" />
+      <img
+        [src]="'assets/images/' + item.image + '-small.jpg'"
+        [srcset]="
+          'assets/images/' +
+          item.image +
+          '-small.jpg 600w, ' +
+          'assets/images/' +
+          item.image +
+          '-medium.jpg 900w, ' +
+          'assets/images/' +
+          item.image +
+          '-large.jpg 1200w'
+        "
+        [sizes]="
+          '(max-width: 600px) 600px, ' + '(max-width: 900px) 900px, ' + '1200px'
+        "
+        alt="item.title"
+        class="bg-cover rounded-3xl"
+      />
     </div>
     } @else {
     <div
