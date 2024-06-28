@@ -1,13 +1,16 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'app-home',
   standalone: true,
-  imports: [],
-  templateUrl: './contact.component.html',
+  imports: [CommonModule],
+  templateUrl: './contact.component.html'
 })
 export class ContactComponent implements OnInit {
-  ngOnInit(): void {
-    document.body.scrollTop = 0;
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) document.body.scrollTop = 0;
   }
 }
