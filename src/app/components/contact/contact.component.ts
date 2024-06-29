@@ -7,6 +7,7 @@ import { Meta, Title } from '@angular/platform-browser';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './contact.component.html',
+  styleUrl: "./contact.component.scss"
 })
 export class ContactComponent implements OnInit {
   constructor(
