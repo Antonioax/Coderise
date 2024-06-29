@@ -23,11 +23,11 @@
   </div>
 
   <div
-    class="grid xl:grid-cols-2 w-[90%] mt-32 mb-16 justify-center items-center"
+    class="grid xl:grid-cols-2 w-[90%] mt-32 sm:mb-16 justify-center items-center"
   >
     @for (item of content; track $index) { @if (item.image) {
     <div
-      class="sm:m-10 bg-opacity-0 rounded-3xl max-w-[500px] shadow-2xl overflow-hidden self-center {{
+      class="sm:m-10 bg-opacity-0 rounded-3xl max-w-[500px] sm:shadow-2xl overflow-hidden self-center {{
         $index % 2 == 0
           ? 'place-self-end mr-12 mt-4 mb-6'
           : 'place-self-start ml-12 mt-2'
@@ -55,7 +55,7 @@
     </div>
     } @else {
     <div
-      class="mb-4 p-6 sm:m-4 sm:p-20 bg-opacity-0 rounded-3xl max-w-[500px] shadow-2xl aspect-square {{
+      class="px-6 mb-10 mt-5 sm:m-4 sm:p-20 bg-opacity-0 rounded-3xl max-w-[500px] sm:shadow-2xl text-center sm:aspect-square {{
         $index % 2 == 0 ? 'place-self-end' : 'place-self-start'
       }}"
     >
@@ -70,10 +70,10 @@
   </div>
 
   <div
-    class="w-full bg-cyan-600 py-32 px-10 flex flex-col justify-center items-center"
+    class="w-[90%] bg-white bg-opacity-80 rounded-3xl shadow-xl py-32 px-10 sm:mt-10 mb-32 flex flex-col justify-center items-center"
   >
-    <div class="text-white mb-10 text-center sm:text-xl">
-      Our extensive technology stack ensures we have the perfect solution for
+    <div class="text-softBlack font-normal mb-10 text-center sm:text-xl">
+      Our extensive <span class="font-semibold text-softBlack">technology stack</span> ensures we have the perfect solution for
       any challenge you face.
     </div>
 
