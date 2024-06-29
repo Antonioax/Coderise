@@ -17,7 +17,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) document.body.scrollTop = 0;
-    this.title.setTitle('coderise - Contact');
+    this.title.setTitle('coderise | Contact');
     this.meta.addTags([
       {
         name: 'description',
