@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) document.body.scrollTop = 0;
-    this.title.setTitle('coderise - Home');
+    this.title.setTitle('coderise | Home');
     this.meta.addTags([
       {
         name: 'description',

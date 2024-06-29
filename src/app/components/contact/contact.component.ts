@@ -7,6 +7,7 @@ import { Meta, Title } from '@angular/platform-browser';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './contact.component.html',
+  styleUrl: "./contact.component.scss"
 })
 export class ContactComponent implements OnInit {
   constructor(
@@ -17,7 +18,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) document.body.scrollTop = 0;
-    this.title.setTitle('coderise - Contact');
+    this.title.setTitle('coderise | Contact');
     this.meta.addTags([
       {
         name: 'description',
