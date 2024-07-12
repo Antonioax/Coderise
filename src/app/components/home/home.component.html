@@ -50,7 +50,7 @@
           '(max-width: 600px) 600px, ' + '(max-width: 900px) 900px, ' + '1200px'
         "
         alt="item.title"
-        class="bg-cover rounded-3xl"
+        class="bg-cover"
       />
     </div>
     } @else {
@@ -110,32 +110,35 @@
       <img src="assets/images/logos/apple.svg" alt="Apple" />
     </div>
 
-    <div>
-      <div>Why Choose Us?</div>
-      <div>
-        <div>Expert Team</div>
-        <div>
-          Our team of experienced developers, designers, and digital strategists
-          are passionate about technology and committed to delivering
-          excellence. We work collaboratively with you to understand your needs
-          and provide tailored solutions.
+    <div class="flex flex-col items-center justify-center mt-32">
+      <div class="text-softBlack text-5xl font-normal text-center">Why Choose Us?</div>
+
+      <div class="grid sm:grid-cols-3 w-[90%] mt-32 justify-center items-center">
+        <div class="flex flex-col items-center justify-center bg-sky-100  p-10 m-2 rounded-2xl aspect-square shadow-sm">
+          <div class="text-xl mb-10 text-softBlack font-normal">Expert Team</div>
+          <div class="text-softBlack text-center">
+            Our team of experienced developers, designers, and digital strategists
+            are passionate about technology and committed to delivering
+            excellence. We work collaboratively with you to understand your needs
+            and provide tailored solutions.
+          </div>
         </div>
-      </div>
-      <div>
-        <div>Customer-Centric Approach</div>
-        <div>
-          Your success is our priority. We believe in building long-term
-          relationships with our clients by delivering exceptional value and
-          outstanding customer service. We listen, understand, and deliver
-          beyond expectations.
+        <div class="flex flex-col items-center justify-center bg-sky-100 p-10 m-2 rounded-2xl aspect-square shadow-sm">
+          <div class="text-xl mb-10 text-softBlack font-normal">Customer-Centric Approach</div>
+          <div class="text-softBlack text-center">
+            Your success is our priority. We believe in building long-term
+            relationships with our clients by delivering exceptional value and
+            outstanding customer service. We listen, understand, and deliver
+            beyond expectations.
+          </div>
         </div>
-      </div>
-      <div>
-        <div>Innovative Solutions</div>
-        <div>
-          We stay ahead of the curve by continuously exploring new technologies
-          and methodologies. Our innovative approach ensures your business
-          remains competitive and future-ready.
+        <div class="flex flex-col items-center justify-center bg-sky-100 p-10 m-2 rounded-2xl aspect-square shadow-sm">
+          <div class="text-xl mb-10 text-softBlack font-normal">Innovative Solutions</div>
+          <div class="text-softBlack text-center">
+            We stay ahead of the curve by continuously exploring new technologies
+            and methodologies. Our innovative approach ensures your business
+            remains competitive and future-ready.
+          </div>
         </div>
       </div>
     </div>
