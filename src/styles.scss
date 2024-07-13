@@ -9,7 +9,7 @@
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  color: #ffffff;
+  color: #0e1111;
 }
 
 html,
@@ -17,7 +17,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: auto;
+  overflow: hidden; /* Prevent scrollbar from appearing on body */
   overscroll-behavior: none;
 }
 body {
@@ -33,7 +33,28 @@ body {
 
 // Hiding scrollbars
 
+.scroll-container {
+  height: 100%;
+  overflow-y: scroll; /* Allows scrolling */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Hide scrollbar for Webkit browsers */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scroll-container {
+  scrollbar-width: none;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* make scrollbar transparent */
+}
+
+/* Specific to Webkit browsers (e.g., Chrome, Safari) */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
 }

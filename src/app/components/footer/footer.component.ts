@@ -8,21 +8,6 @@ import { Subscription, filter, first } from 'rxjs';
   imports: [],
   templateUrl: './footer.component.html',
 })
-export class FooterComponent implements OnInit {
-  routerSub = new Subscription();
-  currentPage = 'home';
-
-  constructor(private router: Router) {}
-
-  ngOnInit() {
-    this.routerSub = this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((val: any) => {
-        this.currentPage = val.url;
-      });
-  }
-
-  ngOnDestroy() {
-    this.routerSub.unsubscribe();
-  }
+export class FooterComponent {
+  constructor() {}
 }
