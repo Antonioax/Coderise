@@ -3,9 +3,9 @@
   style="
     background: rgb(56, 243, 250);
     background: linear-gradient(
-      90deg,
+      0deg,
       rgba(56, 243, 250, 1) 0%,
-      rgba(227, 252, 255, 1) 100%
+      rgba(187, 248, 255, 1) 100%
     );
   "
 >
@@ -22,10 +22,10 @@
   >
     @for (item of content; track $index) { @if (item.image) {
     <div
-      class="sm:m-10 bg-opacity-0 max-w-[500px] overflow-hidden self-center {{
+      class="bg-opacity-0 max-w-[500px] overflow-hidden self-center sm:shadow-2xl {{
         $index % 2 == 0
-          ? 'place-self-end mr-12 mt-4 mb-6 rounded-l-3xl'
-          : 'place-self-start ml-12 mt-2 rounded-r-3xl'
+          ? 'place-self-end mt-4 mb-6 rounded-l-3xl max-sm:translate-x-8'
+          : 'place-self-start mt-2 rounded-r-3xl max-sm:-translate-x-8'
       }}"
     >
       <img
@@ -50,7 +50,7 @@
     </div>
     } @else {
     <div
-      class="px-6 mb-10 sm:m-4 sm:p-20 bg-opacity-0 rounded-3xl max-w-[500px] sm:shadow-2xl text-center sm:aspect-square {{
+      class="px-6 mb-10 sm:p-20 bg-opacity-0 rounded-3xl max-w-[500px] sm:shadow-2xl text-center sm:aspect-square {{
         $index % 2 == 0 ? 'place-self-end' : 'place-self-start'
       }}
       {{ $index === 4 ? 'mt-0' : 'mt-5' }}
@@ -116,7 +116,7 @@
         class="grid xl:grid-cols-3 w-full xl:w-[90%] mt-16 xl:mt-32 justify-center items-center"
       >
         <div
-          class="flex flex-col items-center justify-center xl:bg-white px-6 mb-10 xl:m-4 xl:p-20 rounded-2xl xl:aspect-square xl:shadow-2xl"
+          class="flex flex-col items-center justify-center xl:bg-white px-6 mb-10 xl:m-4 xl:p-10 rounded-2xl xl:aspect-square xl:shadow-2xl"
         >
           <div
             class="text-md xl:text-xl mb-4 xl:mb-10 text-softBlack font-light xl:font-normal"
@@ -131,10 +131,10 @@
           </div>
         </div>
         <div
-          class="flex flex-col items-center justify-center xl:bg-white px-6 mb-10 xl:m-4 xl:p-20 rounded-2xl xl:aspect-square xl:shadow-2xl"
+          class="flex flex-col items-center justify-center xl:bg-white px-6 mb-10 xl:m-4 xl:p-10 rounded-2xl xl:aspect-square xl:shadow-2xl"
         >
           <div
-            class="text-md xl:text-xl mb-4 xl:mb-10 text-softBlack font-light xl:font-normal"
+            class="text-md xl:text-xl mb-4 xl:mb-10 text-softBlack font-light xl:font-normal text-nowrap"
           >
             Customer-Centric Approach
           </div>
@@ -146,7 +146,7 @@
           </div>
         </div>
         <div
-          class="flex flex-col items-center justify-center xl:bg-white px-6 mb-10 xl:m-4 xl:p-20 rounded-2xl xl:aspect-square xl:shadow-2xl"
+          class="flex flex-col items-center justify-center xl:bg-white px-6 mb-10 xl:m-4 xl:p-10 rounded-2xl xl:aspect-square xl:shadow-2xl"
         >
           <div
             class="text-md xl:text-xl mb-4 xl:mb-10 text-softBlack font-light xl:font-normal"
