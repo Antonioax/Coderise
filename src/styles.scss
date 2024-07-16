@@ -25,6 +25,11 @@ body {
   font-family: Roboto, "Nunito", sans-serif;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
 // Router link
 
 .active-link{

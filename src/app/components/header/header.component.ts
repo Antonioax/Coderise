@@ -2,11 +2,12 @@ import { CommonModule } from "@angular/common";
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { Subscription, filter } from 'rxjs';
+import { ThemeSwitchComponent } from "../shared/theme-switch/theme-switch.component";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, ThemeSwitchComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
