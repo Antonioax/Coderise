@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-theme-switch',
@@ -9,31 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThemeSwitchComponent implements OnInit {
   isDarkMode: boolean = false;
+  isDarkSub!: Subscription;
+
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
-    if (this.isBrowser()) {
-      this.isDarkMode = localStorage.getItem('theme') === 'dark';
-      this.applyTheme();
-    }
+    this.isDarkSub = this.themeService.isDarkMode.subscribe({
+      next: (mode) => (this.isDarkMode = mode),
+    });
   }
 
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
-    if (this.isBrowser()) {
-      localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
-      this.applyTheme();
-    }
-  }
-
-  applyTheme() {
-    if (this.isDarkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-  }
-
-  isBrowser(): boolean {
-    return typeof window !== 'undefined' && typeof localStorage !== 'undefined';
+    this.themeService.setDarkMode(this.isDarkMode);
   }
 }
