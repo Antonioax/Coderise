@@ -1,15 +1,24 @@
 <div
-  class="max-sm:hidden px-5 py-5 flex items-center justify-start gap-3 text-ambient fixed w-full z-30"
+  class="max-sm:hidden px-5 py-5 flex items-center justify-between fixed w-full z-30 {{
+    isDarkMode ? 'text-white' : 'text-ambient'
+  }}"
 >
+  <div class="flex items-center justify-start gap-3">
     <a routerLink="/home" routerLinkActive="active-link">Home</a>
     <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
+  </div>
+  <div class="flex items-center justify-end gap-3 text-xs">
+    LIGHT
+    <app-theme-switch class="flex"></app-theme-switch>
+    DARK
+  </div>
 </div>
 
 @if(isMenu) {
 <div class="sm:hidden h-screen w-screen fixed z-10" (click)="onMenuClose()">
   <div
     class="sm:hidden h-screen min-w-[50vw] bg-softBlack bg-opacity-80 shadow-lg flex flex-col items-center py-3 text-ambient fixed menu-panel"
-    [ngClass]="{'slide-in': isMenu, 'slide-out': isMenuClosing}"
+    [ngClass]="{ 'slide-in': isMenu, 'slide-out': isMenuClosing }"
     (click)="$event.stopPropagation()"
   >
     <div
@@ -24,7 +33,11 @@
   </div>
 </div>
 } @else {
-<div class="sm:hidden fixed top-4 left-4" (click)="isMenu = !isMenu">
-  <img src="assets/images/menu.svg" alt="Menu icon" />
+<div class="sm:hidden fixed top-4 left-4 z-50" (click)="isMenu = !isMenu">
+  <app-menu-icon [isDarkMode]="isDarkMode"></app-menu-icon>
+</div>
+
+<div class="sm:hidden fixed top-4 right-4 z-50">
+  <app-theme-switch class="flex"></app-theme-switch>
 </div>
 }

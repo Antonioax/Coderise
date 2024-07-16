@@ -9,7 +9,7 @@
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  color: #0e1111;
+  //color: #0e1111;
 }
 
 html,
@@ -25,6 +25,11 @@ body {
   font-family: Roboto, "Nunito", sans-serif;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
 // Router link
 
 .active-link{
@@ -35,7 +40,7 @@ body {
 
 .scroll-container {
   height: 100%;
-  overflow-y: scroll; /* Allows scrolling */
+  overflow-y: auto; /* Allows scrolling */
   overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 

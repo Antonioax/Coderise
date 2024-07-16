@@ -8,6 +8,7 @@ import {
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
+import { ThemeService } from "./services/theme.service";
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'top',
@@ -21,5 +22,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes, inMemoryScrollingFeature), provideClientHydration(),
+    ThemeService
   ],
 };

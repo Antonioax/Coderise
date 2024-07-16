@@ -1,6 +1,28 @@
-.tech-stack{
+.tech-stack {
   img {
     width: 40px;
     height: 40px;
   }
+}
+
+.background-dark {
+  background: rgb(1, 46, 53);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 46, 53, 1) 0%,
+    rgba(2, 67, 80, 1) 100%
+  );
+
+  color: white !important;
+}
+
+.background-light {
+  background: rgb(56, 243, 250);
+  background: linear-gradient(
+    0deg,
+    rgba(56, 243, 250, 1) 0%,
+    rgba(187, 248, 255, 1) 100%
+  );
+
+  color: #0e1111 !important;
 }

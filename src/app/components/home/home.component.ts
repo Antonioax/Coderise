@@ -1,7 +1,15 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  Inject,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import { Content, HomeContent } from '../../content/home.content';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +18,17 @@ import { Meta, Title } from '@angular/platform-browser';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   content!: Content[];
+
+  isDarkMode: boolean = false;
+  isDarkSub!: Subscription;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private meta: Meta,
-    private title: Title
+    private title: Title,
+    private themeService: ThemeService
   ) {}
 
   ngOnInit() {
@@ -27,8 +39,21 @@ export class HomeComponent implements OnInit {
         name: 'description',
         content: 'Everything you need to know about coderise.',
       },
-      { name: 'keywords', content: 'coderise, Coderise, software, website, application' },
+      {
+        name: 'keywords',
+        content: 'coderise, Coderise, software, website, application',
+      },
     ]);
     this.content = HomeContent;
+
+    setTimeout(() => {
+      this.isDarkSub = this.themeService.isDarkMode.subscribe({
+        next: (mode) => (this.isDarkMode = mode),
+      });
+    }, 0);
+  }
+
+  ngOnDestroy() {
+    this.isDarkSub.unsubscribe();
   }
 }

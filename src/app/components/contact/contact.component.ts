@@ -1,19 +1,25 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { Subscription } from "rxjs";
+import { ThemeService } from "../../services/theme.service";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './contact.component.html',
-  styleUrl: "./contact.component.scss"
+  styleUrl: './contact.component.scss',
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
+  isDarkMode: boolean = false;
+  isDarkSub!: Subscription;
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private meta: Meta,
-    private title: Title
+    private title: Title,
+    private themeService: ThemeService
   ) {}
 
   ngOnInit() {
@@ -30,5 +36,15 @@ export class ContactComponent implements OnInit {
         content: 'coderise, Coderise, software, website, application, contact',
       },
     ]);
+
+    setTimeout(() => {
+      this.isDarkSub = this.themeService.isDarkMode.subscribe({
+        next: (mode) => (this.isDarkMode = mode),
+      });
+    }, 0);
+  }
+
+  ngOnDestroy() {
+    this.isDarkSub.unsubscribe();
   }
 }
