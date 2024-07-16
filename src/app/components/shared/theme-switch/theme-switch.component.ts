@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ThemeService } from '../../../services/theme.service';
 
@@ -9,7 +9,7 @@ import { ThemeService } from '../../../services/theme.service';
   templateUrl: './theme-switch.component.html',
   styleUrl: './theme-switch.component.scss',
 })
-export class ThemeSwitchComponent implements OnInit {
+export class ThemeSwitchComponent implements OnInit, OnDestroy {
   isDarkMode: boolean = false;
   isDarkSub!: Subscription;
 
@@ -19,6 +19,10 @@ export class ThemeSwitchComponent implements OnInit {
     this.isDarkSub = this.themeService.isDarkMode.subscribe({
       next: (mode) => (this.isDarkMode = mode),
     });
+  }
+
+  ngOnDestroy() {
+    this.isDarkSub.unsubscribe();
   }
 
   toggleTheme() {
