@@ -4,11 +4,12 @@ import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { Subscription, filter } from 'rxjs';
 import { ThemeSwitchComponent } from "../shared/theme-switch/theme-switch.component";
 import { ThemeService } from "../../services/theme.service";
+import { MenuIconComponent } from "../shared/menu-icon/menu-icon.component";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule, ThemeSwitchComponent],
+  imports: [RouterModule, CommonModule, ThemeSwitchComponent, MenuIconComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
