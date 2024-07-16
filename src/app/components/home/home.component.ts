@@ -46,9 +46,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     ]);
     this.content = HomeContent;
 
-    this.isDarkSub = this.themeService.isDarkMode.subscribe({
-      next: (mode) => (this.isDarkMode = mode),
-    });
+    setTimeout(() => {
+      this.isDarkSub = this.themeService.isDarkMode.subscribe({
+        next: (mode) => (this.isDarkMode = mode),
+      });
+    }, 0);
   }
 
   ngOnDestroy() {
