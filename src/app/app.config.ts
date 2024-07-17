@@ -26,7 +26,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes, inMemoryScrollingFeature),
-    ThemeService,
     provideClientHydration(),
     {
       provide: APP_INITIALIZER,

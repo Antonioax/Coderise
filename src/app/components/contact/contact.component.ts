@@ -4,6 +4,7 @@ import {
   OnDestroy,
   OnInit,
   PLATFORM_ID,
+  Renderer2,
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
@@ -44,10 +45,10 @@ export class ContactComponent implements OnInit, OnDestroy {
     ]);
 
     this.isDarkSub = this.themeService.isDarkMode.subscribe({
-      next: (mode) => (this.isDarkMode = mode),
+      next: (mode) => {
+        this.isDarkMode = mode;
+      },
     });
-
-    this.isDarkMode = this.themeService.isDarkMode.getValue();
   }
 
   ngOnDestroy() {
