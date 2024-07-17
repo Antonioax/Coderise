@@ -70,31 +70,120 @@
     </div>
 
     <div class="tech-stack flex gap-1 justify-center items-center flex-wrap">
-      <img src="assets/images/logos/html.svg" alt="HTML" class="mb-[2px]" />
-      <img src="assets/images/logos/css.svg" alt="CSS" />
-      <img src="assets/images/logos/tailwind.svg" alt="TailwindCSS" />
-      <img src="assets/images/logos/sass.svg" alt="SASS" />
-      <img src="assets/images/logos/angular.svg" alt="Angular" />
-      <img src="assets/images/logos/react.svg" alt="React" />
-      <img src="assets/images/logos/redux.svg" alt="Redux" />
-      <img src="assets/images/logos/javascript.svg" alt="Javascript" />
-      <img src="assets/images/logos/typescript.svg" alt="Typescript" />
-      <img src="assets/images/logos/nodejs.svg" alt="NodeJS" />
-      <img src="assets/images/logos/expressjs.svg" alt="ExpressJS" />
-      <img src="assets/images/logos/aws.svg" alt="Amazon Web Services" />
-      <img src="assets/images/logos/git.svg" alt="Git" />
-      <img src="assets/images/logos/github.svg" alt="GitHub" />
-      <img src="assets/images/logos/firebase.svg" alt="Firebase" />
+      <img
+        src="assets/images/logos/html.svg"
+        alt="HTML"
+        class="mb-[2px] {{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/css.svg"
+        alt="CSS"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/tailwind.svg"
+        alt="TailwindCSS"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/sass.svg"
+        alt="SASS"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/angular.svg"
+        alt="Angular"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/react.svg"
+        alt="React"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/redux.svg"
+        alt="Redux"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/javascript.svg"
+        alt="Javascript"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/typescript.svg"
+        alt="Typescript"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/nodejs.svg"
+        alt="NodeJS"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/expressjs.svg"
+        alt="ExpressJS"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/aws.svg"
+        alt="Amazon Web Services"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/git.svg"
+        alt="Git"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/github.svg"
+        alt="GitHub"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/firebase.svg"
+        alt="Firebase"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
       <img
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAEyElEQVR4nO2dS6hWVRTHfykNMrKalBX00OwBNWsQWoOKyIuUTQoqa1KTiqKygSFkNEhDbBBGgQ3UBhUmPagv6HEj0sgUBI3AS4UGcY1Sy1JKr+5YsDedbt/j7L3Xd77rt9cP/nDRb6977n+dex57r7UvGIZhGMbJyaNexgC4CZgAjgMjloFmuQj4BXBe+4E5loRmmAHsqJgftMP/n9FnXmljftDL5n5/GQFOdEmAaJEloT+cC+zrYb7z94bzLQm6nAJ8UMP8oI+AaZYEPR6JMD9IxhgKnAf8lpCAQ8AFloF83kowP2ijJSCPBRnmB91qSUhjBvC9QgL2AqdbEuJ5XsH8oJWWgDguB47WMHbCq9fnjvqYRk3ernlmHwaO1PzsJnO/HtfWmG4IOgAcjLgUzbck9GZzhKHjXnU//4UloDs3R95c9/innJgxspBjdODzSDN3A2ORYz4z99szL9JI0U5gV8K46y0J/+fDBCO3ecWOa1kC/stcv7gea6TcsLckjJOnrCssCf+yJsFE0afAaOLYFyvfv2jOAH5PNLGVeOkK09UzB/3DTwUeSjRQ9I5X6vgHB/3DTwW+yjDwDeDNjPFfUjiXRkw7tNMG4LWM8aLLKJhnMs1bC7yaGUOOoVjGMs1bk/EEFSTHUCRXZhonWg28oBCnyLWCJQrGPQesUIjzBAUyqmDccoX7iOgTCmNmzSVH10NPeeXG+bu0l7IRBdMc8Li/fGjEuoWC0LhsOP8W/bBSLLmcFUPq/I2bpPuBB5RitUqqdP5VybTFwL1Ksfb7Yxt65igZ5oA7vbTizaYANOo9XaUb5nbFeEXciHOmn90kLVB8oipmenq1omE3ADcqxltFAdQtO3Q1NM9Xu2nFK6J88WtFw67x0oq3lQL4VtGwq4CrFeN9QwH8qGjYXL+ipRVPSh2HngOKhl3o943QiicviEOPxiyo85Lm7VmK8WRWdOg5pmjYWcDZivHk5Bh6UouwXBud5pv5tOJJs8fQE9NQ4XpoupdWvJ8ogO+UzDrWh8taERUSMS1Irov+rMQ8rBRTGkSGntxKNuclj7OBmEa9blpHATyrZNZ4JWadfYTqqIgquXv68Na6RynmXRRSkKth1m7FEsegiykEjUvGzkq8lEa9yZJjKoZNCoZtq8RLadQrem+hxQqGba7ES2nUK/L6HzjTT3y5DEmDnlad6V+llSbmbkXmJhVStTJjSZtTcVyXaZqsLQdyGvWc36GlSLYqnbU5jXpy/yiW+RlNeusrcTZkJKD4fSM2ZjToBdYmxnh9ACfdlOOcxDUCac4LvJQw/me/nGkACxM265AKu9Rqu+Ol1IHG8GRCg15gRUJnjdGGVYkdLcsjxsl+pEYXnq5p5NLKmKU1Pi9PW8vM+XosqrFjevUy0qtR7w/gDjM/jtnA+11Mlea8QLdGvfeAS8z8vN+GH9oYK815gXaNerLx921mvA7T/Db0H1fenGVKO1Bt1NsO3Aecaub3r8nvMeBu/yI1y38t/2Z/zK1B3q2c9TIbagyw2btl7jfPaIfVMaMhtnRYHzYaYnuHCgmjIXZ1qBEyGmKsQ5Wc0RB7S+tunMrljeODPpgSOdihV8BoiCOVBEiHjNEwE5UEyNeGYRiGwcnEP7AUGKx31pFvAAAAAElFTkSuQmCC"
+        class="{{ isDarkMode ? 'invert' : '' }}"
       />
-      <img src="assets/images/logos/cpp.svg" alt="C++" />
-      <img src="assets/images/logos/csharp.svg" alt="C#" />
-      <img src="assets/images/logos/figma.svg" alt="Figma" />
-      <img src="assets/images/logos/gimp.svg" alt="Gimp" />
-      <img src="assets/images/logos/ionic.svg" alt="Ionic" />
-      <img src="assets/images/logos/android.svg" alt="Android" />
-      <img src="assets/images/logos/apple.svg" alt="Apple" />
+      <img
+        src="assets/images/logos/cpp.svg"
+        alt="C++"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/csharp.svg"
+        alt="C#"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/figma.svg"
+        alt="Figma"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/gimp.svg"
+        alt="Gimp"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/ionic.svg"
+        alt="Ionic"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/android.svg"
+        alt="Android"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
+      <img
+        src="assets/images/logos/apple.svg"
+        alt="Apple"
+        class="{{ isDarkMode ? 'invert' : '' }}"
+      />
     </div>
 
     <div
