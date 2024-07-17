@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from "@angular/common";
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 Injectable({
@@ -8,13 +9,21 @@ export class ThemeService {
   isDarkMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   setDarkMode(isDark: boolean) {
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    if (this.isBrowser()) localStorage.setItem('theme', isDark ? 'dark' : 'light');
     this.isDarkMode.next(isDark);
   }
 
   initializeTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    this.isDarkMode.next(savedTheme === 'dark');
-    console.log(this.isDarkMode.value);
+    if (this.isBrowser()) {
+      const savedTheme = localStorage.getItem('theme');
+      const isDark = savedTheme === 'dark';
+      this.isDarkMode.next(isDark);
+    } else {
+      this.isDarkMode.next(false); // Default to light mode on the server
+    }
+  }
+
+  isBrowser(): boolean {
+    return typeof window !== 'undefined' && typeof localStorage !== 'undefined';
   }
 }

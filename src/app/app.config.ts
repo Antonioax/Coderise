@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { APP_INITIALIZER, ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import {
   InMemoryScrollingFeature,
   InMemoryScrollingOptions,
@@ -15,13 +15,24 @@ const scrollConfig: InMemoryScrollingOptions = {
   anchorScrolling: 'enabled',
 };
 
+export function initializeApp(themeService: ThemeService) {
+  return () => themeService.initializeTheme();
+}
+
 const inMemoryScrollingFeature: InMemoryScrollingFeature =
   withInMemoryScrolling(scrollConfig);
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes, inMemoryScrollingFeature), provideClientHydration(),
-    ThemeService
+    provideRouter(routes, inMemoryScrollingFeature),
+    ThemeService,
+    provideClientHydration(),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      deps: [ThemeService],
+      multi: true,
+    },
   ],
 };

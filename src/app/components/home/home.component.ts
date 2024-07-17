@@ -21,7 +21,7 @@ import { ThemeService } from '../../services/theme.service';
 export class HomeComponent implements OnInit, OnDestroy {
   content!: Content[];
 
-  isDarkMode: boolean = false;
+  isDarkMode!: boolean;
   isDarkSub!: Subscription;
 
   constructor(
@@ -46,11 +46,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     ]);
     this.content = HomeContent;
 
-    setTimeout(() => {
-      this.isDarkSub = this.themeService.isDarkMode.subscribe({
-        next: (mode) => (this.isDarkMode = mode),
-      });
-    }, 0);
+    this.isDarkSub = this.themeService.isDarkMode.subscribe({
+      next: (mode) => (this.isDarkMode = mode),
+    });
+
+    this.isDarkMode = this.themeService.isDarkMode.getValue();
   }
 
   ngOnDestroy() {

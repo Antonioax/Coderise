@@ -1,8 +1,14 @@
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  Inject,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
-import { Subscription } from "rxjs";
-import { ThemeService } from "../../services/theme.service";
+import { Subscription } from 'rxjs';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +18,7 @@ import { ThemeService } from "../../services/theme.service";
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent implements OnInit, OnDestroy {
-  isDarkMode: boolean = false;
+  isDarkMode!: boolean;
   isDarkSub!: Subscription;
 
   constructor(
@@ -37,11 +43,11 @@ export class ContactComponent implements OnInit, OnDestroy {
       },
     ]);
 
-    setTimeout(() => {
-      this.isDarkSub = this.themeService.isDarkMode.subscribe({
-        next: (mode) => (this.isDarkMode = mode),
-      });
-    }, 0);
+    this.isDarkSub = this.themeService.isDarkMode.subscribe({
+      next: (mode) => (this.isDarkMode = mode),
+    });
+
+    this.isDarkMode = this.themeService.isDarkMode.getValue();
   }
 
   ngOnDestroy() {

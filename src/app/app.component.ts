@@ -3,7 +3,6 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { filter, Subscription } from 'rxjs';
-import { ThemeService } from "./services/theme.service";
 import { CommonModule } from "@angular/common";
 
 @Component({
@@ -16,12 +15,9 @@ import { CommonModule } from "@angular/common";
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('scrollContainer') scrollContainer: any;
 
-  constructor(private router: Router, private themeService: ThemeService) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    if(this.isBrowser()) {
-      this.themeService.initializeTheme();
-    }
   }
 
   ngAfterViewInit() {
