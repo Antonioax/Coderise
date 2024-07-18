@@ -1,6 +1,8 @@
 import {
+  AfterViewInit,
   Component,
   Inject,
+  NgZone,
   OnDestroy,
   OnInit,
   PLATFORM_ID,
@@ -18,7 +20,7 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent implements OnInit, OnDestroy {
+export class ContactComponent implements OnInit, OnDestroy, AfterViewInit {
   isDarkMode!: boolean;
   isDarkSub!: Subscription;
 
@@ -26,7 +28,8 @@ export class ContactComponent implements OnInit, OnDestroy {
     @Inject(PLATFORM_ID) private platformId: Object,
     private meta: Meta,
     private title: Title,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private ngZone: NgZone
   ) {}
 
   ngOnInit() {
@@ -43,11 +46,15 @@ export class ContactComponent implements OnInit, OnDestroy {
         content: 'coderise, Coderise, software, website, application, contact',
       },
     ]);
+  }
 
-    this.isDarkSub = this.themeService.isDarkMode.subscribe({
-      next: (mode) => {
-        this.isDarkMode = mode;
-      },
+  ngAfterViewInit() {
+    this.ngZone.run(() => {
+      this.isDarkSub = this.themeService.isDarkMode.subscribe({
+        next: (mode) => {
+          this.isDarkMode = mode;
+        },
+      });
     });
   }
 
