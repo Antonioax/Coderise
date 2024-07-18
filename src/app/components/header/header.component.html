@@ -7,10 +7,16 @@
     <a routerLink="/home" routerLinkActive="active-link">Home</a>
     <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
   </div>
-  <div class="flex items-center justify-end gap-3 text-xs">
-    LIGHT
+  <div class="flex items-center justify-end gap-4 text-xs font-light">
+    <button (click)="onSetDarkMode(false)">LIGHT</button>
     <app-theme-switch class="flex"></app-theme-switch>
-    DARK
+    <button (click)="onSetDarkMode(true)">DARK</button>
+    <div
+      class="w-1 h-1 {{
+        isDarkMode ? 'bg-white' : 'bg-softBlack'
+      }} rounded-full"
+    ></div>
+    <app-language-switch></app-language-switch>
   </div>
 </div>
 
