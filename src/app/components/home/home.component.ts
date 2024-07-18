@@ -1,6 +1,8 @@
 import {
+  AfterViewInit,
   Component,
   Inject,
+  NgZone,
   OnDestroy,
   OnInit,
   PLATFORM_ID,
@@ -18,7 +20,7 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   content!: Content[];
 
   isDarkMode!: boolean;
@@ -28,7 +30,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     @Inject(PLATFORM_ID) private platformId: Object,
     private meta: Meta,
     private title: Title,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private ngZone: NgZone
   ) {}
 
   ngOnInit() {
@@ -45,11 +48,15 @@ export class HomeComponent implements OnInit, OnDestroy {
       },
     ]);
     this.content = HomeContent;
+  }
 
-    this.isDarkSub = this.themeService.isDarkMode.subscribe({
-      next: (mode) => {
-        this.isDarkMode = mode;
-      },
+  ngAfterViewInit() {
+    this.ngZone.run(() => {
+      this.isDarkSub = this.themeService.isDarkMode.subscribe({
+        next: (mode) => {
+          this.isDarkMode = mode;
+        },
+      });
     });
   }
 
