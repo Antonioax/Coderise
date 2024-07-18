@@ -6,6 +6,7 @@ import { ThemeSwitchComponent } from '../shared/theme-switch/theme-switch.compon
 import { ThemeService } from '../../services/theme.service';
 import { MenuIconComponent } from '../shared/menu-icon/menu-icon.component';
 import { LanguageSwitchComponent } from '../shared/language-switch/language-switch.component';
+import { LanguageModalComponent } from "../language-modal/language-modal.component";
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,7 @@ import { LanguageSwitchComponent } from '../shared/language-switch/language-swit
     ThemeSwitchComponent,
     MenuIconComponent,
     LanguageSwitchComponent,
+    LanguageModalComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
@@ -26,6 +28,8 @@ export class HeaderComponent {
 
   isDarkMode: boolean = false;
   isDarkSub!: Subscription;
+
+  isLanguageModal: boolean = false;
 
   routerSub = new Subscription();
 

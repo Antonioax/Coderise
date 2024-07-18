@@ -16,7 +16,9 @@
         isDarkMode ? 'bg-white' : 'bg-softBlack'
       }} rounded-full"
     ></div>
-    <app-language-switch></app-language-switch>
+    <app-language-switch
+      (clicked)="isLanguageModal = true"
+    ></app-language-switch>
   </div>
 </div>
 
@@ -47,3 +49,7 @@
 <div class="sm:hidden fixed top-4 right-4 z-50">
   <app-theme-switch class="flex"></app-theme-switch>
 </div>
+
+@if (isLanguageModal) {
+<app-language-modal (close)="isLanguageModal = false"></app-language-modal>
+}
