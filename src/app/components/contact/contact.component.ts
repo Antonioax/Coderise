@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectorRef,
   Component,
   Inject,
   NgZone,
@@ -29,7 +30,8 @@ export class ContactComponent implements OnInit, OnDestroy, AfterViewInit {
     private meta: Meta,
     private title: Title,
     private themeService: ThemeService,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private cdRef: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
@@ -53,6 +55,7 @@ export class ContactComponent implements OnInit, OnDestroy, AfterViewInit {
       this.isDarkSub = this.themeService.isDarkMode.subscribe({
         next: (mode) => {
           this.isDarkMode = mode;
+          this.cdRef.detectChanges();
         },
       });
     });

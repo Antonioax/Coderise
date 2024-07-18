@@ -12,4 +12,8 @@ export class LanguageModalComponent {
   onClose(){
     this.close.emit();
   }
+
+  onChangeLanguage(newLanguage: string){
+    this.close.emit();
+  }
 }
