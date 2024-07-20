@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { ContactComponent } from "./components/contact/contact.component";
+import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 
 export const routes: Routes = [
   {
@@ -14,18 +16,12 @@ export const routes: Routes = [
   },
   {
     path: 'contact',
-    loadComponent: () =>
-      import('./components/contact/contact.component').then(
-        (m) => m.ContactComponent
-      ),
+    component: ContactComponent,
     title: 'Contact',
   },
   {
     path: '**',
-    loadComponent: () =>
-      import('./components/page-not-found/page-not-found.component').then(
-        (m) => m.PageNotFoundComponent
-      ),
+    component: PageNotFoundComponent,
     title: '404',
   },
 ];

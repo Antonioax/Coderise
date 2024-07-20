@@ -1,0 +1,34 @@
+<div
+  class="bg-opacity-70 bg-black fixed top-0 left-0 w-screen h-screen flex justify-center items-center z-[999] animate__animated animate__fadeIn animate__faster"
+  (click)="onClose()"
+>
+  <div
+    class="bg-white shadow-lg rounded-lg flex justify-center items-center p-6 z-[999] animate__animated animate__zoomIn animate__faster"
+    (click)="$event.stopPropagation()"
+  >
+    <img
+      width="48"
+      height="48"
+      src="https://img.icons8.com/color/48/usa-circular.png"
+      alt="English"
+      class="cursor-pointer"
+      (click)="onChangeLanguage('eng')"
+    />
+    <img
+      width="48"
+      height="48"
+      src="https://img.icons8.com/color/48/spain2-circular.png"
+      alt="Spanish"
+      class="cursor-pointer"
+      (click)="onChangeLanguage('spa')"
+    />
+    <img
+      width="48"
+      height="48"
+      src="https://img.icons8.com/color/48/croatia-circular.png"
+      alt="croatia-circular"
+      class="cursor-pointer"
+      (click)="onChangeLanguage('cro')"
+    />
+  </div>
+</div>

@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { Subscription, filter, first } from 'rxjs';
+import { Component, output } from '@angular/core';
 
 @Component({
   selector: 'app-language-switch',
@@ -8,4 +6,10 @@ import { Subscription, filter, first } from 'rxjs';
   imports: [],
   templateUrl: './language-switch.component.html',
 })
-export class LanguageSwitch {}
+export class LanguageSwitchComponent {
+  clicked = output();
+
+  onLanguage() {
+    this.clicked.emit();
+  }
+}

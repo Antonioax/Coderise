@@ -1,15 +1,24 @@
-import { CommonModule } from "@angular/common";
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { Subscription, filter } from 'rxjs';
-import { ThemeSwitchComponent } from "../shared/theme-switch/theme-switch.component";
-import { ThemeService } from "../../services/theme.service";
-import { MenuIconComponent } from "../shared/menu-icon/menu-icon.component";
+import { ThemeSwitchComponent } from '../shared/theme-switch/theme-switch.component';
+import { ThemeService } from '../../services/theme.service';
+import { MenuIconComponent } from '../shared/menu-icon/menu-icon.component';
+import { LanguageSwitchComponent } from '../shared/language-switch/language-switch.component';
+import { LanguageModalComponent } from "../language-modal/language-modal.component";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule, ThemeSwitchComponent, MenuIconComponent],
+  imports: [
+    RouterModule,
+    CommonModule,
+    ThemeSwitchComponent,
+    MenuIconComponent,
+    LanguageSwitchComponent,
+    LanguageModalComponent
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -19,6 +28,8 @@ export class HeaderComponent {
 
   isDarkMode: boolean = false;
   isDarkSub!: Subscription;
+
+  isLanguageModal: boolean = false;
 
   routerSub = new Subscription();
 
@@ -47,5 +58,9 @@ export class HeaderComponent {
       this.isMenu = false;
       this.isMenuClosing = false;
     }, 300);
+  }
+
+  onSetDarkMode(mode: boolean) {
+    this.themeService.setDarkMode(mode);
   }
 }
